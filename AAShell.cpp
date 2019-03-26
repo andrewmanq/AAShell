@@ -8,11 +8,21 @@
 #include "AAShell.h"
 
 AAShell::AAShell () {
-	char array [100];
-	getcwd( array, 100);
-	myCWD=string (array);
+
 }
 
-string AAShell::get() const {
-	return myCWD;
+void AAShell::run() {
+	Path myPath;
+	Prompt myPrompt;
+	cout <<  myPrompt.get() << "$ ";
+	string program;
+	while (1) {
+		cin >> program;
+		int index= myPath.find (program);
+		if (index >= 0) {
+			cout << myPath.getDirectory(index) << endl;
+		} else {
+			cout << "Program doesn't exist." << endl;
+		}
+	}
 }

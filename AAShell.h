@@ -8,16 +8,17 @@
 #ifndef AASHELL_H_
 #define AASHELL_H_
 
-using namespace std;
+#include "Path.cpp"
+#include "Prompt.cpp"
 
-#include <string>
+using namespace std;
 
 class AAShell {
 public:
 	AAShell();
-	string get() const;
+	void run();
 private:
-	string myCWD;
+
 };
 
 #endif /* AASHELL_H_ */

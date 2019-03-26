@@ -6,12 +6,16 @@
  */
 
 
-#include "Prompt.cpp"
+// #include "Prompt.cpp"
+// #include "Path.cpp"
+#include "AAShell.cpp"
 #include <iostream>
 
+using namespace std; 
+
 int main () {
-	Prompt prompt;
-	cout << prompt.get() << endl;
+	AAShell myShell;
+	myShell.run();
 }
 
 

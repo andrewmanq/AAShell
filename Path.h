@@ -6,6 +6,8 @@
 #include <string>
 #include <iostream>
 
+using namespace std;
+
 class Path {
 public:
 	Path();
