@@ -5,7 +5,8 @@
  *      Author: ajv98
  */
 
-#include "Prompt.h"
+
+#include "Prompt.cpp"
 #include <iostream>
 
 int main () {
