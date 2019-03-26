@@ -1,15 +1,10 @@
-/*
- * Prompt.cpp
- *
- *  Created on: Mar 26, 2019
- *      Author: ajv98
- */
 
 #include "Prompt.h"
+#include <unistd.h>
 
 Prompt::Prompt () {
-	char array [100];
-	getcwd( array, 100);
+	char array[1000];
+	getcwd(array, 1000);
 	myCWD=string (array);
 }
 

@@ -1,9 +1,3 @@
-/*
- * Prompt.h
- *
- *  Created on: Mar 26, 2019
- *      Author: ajv98
- */
 
 #ifndef PROMPT_H_
 #define PROMPT_H_
