@@ -19,3 +19,29 @@ CommandLine::CommandLine (istream& in) {
 
     argv = words;
 }
+
+string CommandLine::getCommand() const{
+    return argv[0];
+}
+
+int CommandLine::getArgCount() const{
+    return argc;
+}
+
+vector<string> CommandLine::getArgVector() const{
+    return argv;
+}
+
+string CommandLine::getArgVector(int i) const{
+    return argv[i];
+}
+
+bool CommandLine::noAmpersand() const{
+
+    for(int i = 0; i < argc; i++){
+        if(argv[i] == "&"){
+            return false;
+        }
+    }
+    return true;
+}
