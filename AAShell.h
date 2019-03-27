@@ -18,7 +18,6 @@ class AAShell {
 public:
 	AAShell();
 	void run();
-	void testCommandPrompt();
 private:
 
 };
