@@ -14,6 +14,10 @@
 using namespace std; 
 
 int main () {
+	CommandLine cl = CommandLine(cin);
+	cout << cl.argc;
+	cout << cl.argv[0];
+
 	AAShell myShell;
 	myShell.run();
 }

@@ -1,5 +1,7 @@
 #include "CommandLine.h"
 
+using namespace std;
+
 CommandLine::CommandLine (istream& in) {
     string input;
     getline(in, input);
@@ -7,13 +9,13 @@ CommandLine::CommandLine (istream& in) {
     istringstream ss(input);
 
     string word;
-    *argc = 0;
+    argc = 0;
     vector<string> words = vector<string>();
     while(!ss.eof()){
-        *argc += 1;
+        argc += 1;
         ss >> word;
         words.push_back(word);
-        //cout << word << "\n";
     }
-    
+
+    argv = words;
 }

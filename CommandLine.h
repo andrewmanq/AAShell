@@ -2,18 +2,16 @@
 #ifndef COMMANDLINE_H_
 #define COMMANDLINE_H_
 
-using namespace std;
-
 #include <iostream>
 #include <bits/stdc++.h>
 
 class CommandLine {
 public:
-	int * argc;
-
+	int argc;
+	std::vector<string> argv;
 	CommandLine(istream& in);
 private:
 
 };
 
-#endif /* AASHELL_H_ */
+#endif
