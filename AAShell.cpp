@@ -12,18 +12,24 @@ AAShell::AAShell () {
 }
 
 void AAShell::run() {
-
 	Path myPath;
-	Prompt myPrompt;
-	cout <<  myPrompt.get() << "$ ";
 	string program;
 	while (1) {
-		cin >> program;
-		int index= myPath.find (program);
-		if (index >= 0) {
+		Prompt myPrompt;
+		cout <<  myPrompt.get() << "$ ";
+		CommandLine myCommandLine (cin);
+		//char * command = myCommandLine.getCommand();
+		string command = "ls";
+		int index= myPath.find (command);
+		if (command == "cd") {
+			//do cd
+		} else if (command == "pwd") {
+			//do pwd
+		} else if ( index >= 0 ) {
+			//call system program
 			cout << myPath.getDirectory(index) << endl;
 		} else {
-			cout << "Program doesn't exist." << endl;
+			cout << "That is not a recognized command" << endl;
 		}
 	}
 }
