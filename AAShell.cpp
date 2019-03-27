@@ -12,6 +12,7 @@ AAShell::AAShell () {
 }
 
 void AAShell::run() {
+
 	Path myPath;
 	Prompt myPrompt;
 	cout <<  myPrompt.get() << "$ ";

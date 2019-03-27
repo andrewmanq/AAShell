@@ -10,6 +10,7 @@
 
 #include "Path.cpp"
 #include "Prompt.cpp"
+#include "CommandLine.cpp"
 
 using namespace std;
 
@@ -17,6 +18,7 @@ class AAShell {
 public:
 	AAShell();
 	void run();
+	void testCommandPrompt();
 private:
 
 };
