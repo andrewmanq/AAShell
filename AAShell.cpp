@@ -6,6 +6,7 @@
  */
 
 #include "AAShell.h"
+#include "sys/wait.h"
 
 AAShell::AAShell () {
 
@@ -18,28 +19,38 @@ void AAShell::run() {
 		cout <<  myPrompt.get() << "$ ";
 		CommandLine myCommandLine (cin);
 		char* command = myCommandLine.getCommand();
+		string commandStr= string (command);
 
-		// char** test = myCommandLine.getArgVector();
-		// for(test; !test; test++){
-		// 	cout << test << endl;
-		// }
-
-		int index= myPath.find (command);
-		if (command == "cd") {
+		int index= myPath.find (commandStr);
+		if (commandStr == "cd") {
 			//do cd
-		} else if (command == "pwd") {
+			cout << "Entered the cd branch" << endl;
+		} else if (commandStr == "pwd") {
 			//do pwd
+			cout << "Entered the pwd branch" << endl;
+			char array[1000];
+			getcwd(array, 1000);
+			cout << array << endl;
 		} else if ( index >= 0 ) {
 			//call system program
 			cout << myPath.getDirectory(index) << endl;
 			int pid= fork();
 			if (pid == -1) {
-				//failure
+				cerr << "Failed to create new child process" << endl;
+				exit (2);
 			} else if (pid == 0) {
 				//child
-
+				cout << "I am the child" << endl;
+				string program= myPath.getDirectory(index) + "/" + commandStr;
+				cout << program << endl;
+				execve (program.c_str(), myCommandLine.getArgVector(), environ);
+				cout << "Child had error in execve" << endl;
+				exit(EXIT_SUCCESS);
 			} else {
 				//parent
+				//put an if statement here based on noAmpersand
+				cout << "I am the parent" << endl;
+				waitpid(pid, NULL, 0);
 			}
 		} else {
 			cout << "That is not a recognized command" << endl;
