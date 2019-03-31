@@ -19,7 +19,8 @@ public:
 	AAShell();
 	void run();
 private:
-
+	void pwd();
+	void cd(CommandLine cl);
 };
 
 #endif /* AASHELL_H_ */
