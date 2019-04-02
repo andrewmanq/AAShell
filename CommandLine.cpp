@@ -1,3 +1,13 @@
+/*
+ * CommandLine.cpp
+ * 
+ * This class takes an istream& argument and parses the input of a command line user.
+ * Warning: will immediately halt program for user input upon creation
+ *
+ *  Created on: Mar 26, 2019
+ *      Author: anq3
+ */
+
 #include "CommandLine.h"
 
 using namespace std;
