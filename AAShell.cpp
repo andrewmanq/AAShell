@@ -1,6 +1,9 @@
 /*
  * AAShell.cpp
- *
+ * 
+ * The AAShell is the program's manager. It runs programs according to user input and uses multithreading if neccessary.
+ * Instructions: constructor needs no input. To execute the manager, use AAShell::run();
+ * 
  *  Created on: Mar 26, 2019
  *      Author: ajv98 and anq3
  */
@@ -54,12 +57,14 @@ void AAShell::run() {
 	}
 }
 
+//runs a local implementation of the classic pwd unix command
 void AAShell::pwd() {
 	char array[1000];
 	getcwd(array, 1000);
 	cout << array << endl;
 }
 
+//runs a local implementation of the classic cd command
 void AAShell::cd(CommandLine cl){
 	if (chdir(cl.getArgVector(1)) == -1) {
 		cout << "Directory not found." << endl;
